@@ -30,14 +30,14 @@ namespace Dungeon
 
 
 
-            private static string GetRoom()
-            {
+        private static string GetRoom()
+        {
                 //Requirements:
                 /*
                  * 1. Create a collection of room descriptions
                  * 2.Randomly print one of those room descriptions to the console.
                  */
-            }
+        }
 
             bool repeat = true;
             do
