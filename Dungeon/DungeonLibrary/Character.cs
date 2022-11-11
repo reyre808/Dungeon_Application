@@ -49,7 +49,7 @@
 
         public override string ToString()
         {
-            return "Block" + Block + "Hit Chance" + HitChance + "Attack Damage" + 0 + "Max Life" + MaxLife + "Life" + Life;
+            return "Block" + Block + "Hit Chance" + HitChance + "Attack Damage" + 0 + "Max Life" + MaxLife + "Life" + Life + "Player Race" + PlayerRace;
                 
              
         }

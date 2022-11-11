@@ -8,6 +8,11 @@ namespace DungeonLibrary
 {
     internal class PlayerRace
     {
-
+        public enum Race
+        {
+            Human,
+            Donkey,
+            Alien
+        }
     }
 }
