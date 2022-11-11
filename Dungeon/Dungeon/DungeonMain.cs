@@ -39,8 +39,9 @@ namespace Dungeon
                         
                         break;
             }
+            Console.WriteLine("WOAH!!!! ");
             GetRoom();
-            Console.WriteLine("WOAH!!!! " + GetRoom);
+
             #region Create Player
             //TODO Create an instance of the player class.
             #endregion
@@ -56,7 +57,7 @@ namespace Dungeon
 
         }
 
-        public static string GetRoom()
+        public static void GetRoom()
         {
 
             //Requirements:
@@ -64,10 +65,10 @@ namespace Dungeon
              * 1. Create a collection of room descriptions
              * 2.Randomly print one of those room descriptions to the console.
              */
-                return "";
+                
                 Console.WriteLine("Starting Your Adventure");
                 Console.WriteLine();
-                Console.WriteLine("Enter Yes To Start");
+                
 
                 Console.WriteLine();
                 int random = 0;

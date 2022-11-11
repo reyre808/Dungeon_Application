@@ -38,6 +38,23 @@
             Block = block;
             MaxLife = maxLife;
             Life = life;
+
+
+
         }
+
+        public int AttBlock() { return Block; }
+        public int AttChance() { return HitChance; }
+        public int AttDamage() { return 0; }
+
+        public override string ToString()
+        {
+            return "Block" + Block + "Hit Chance" + HitChance + "Attack Damage" + 0 + "Max Life" + MaxLife + "Life" + Life;
+                
+             
+        }
+
+
+
     }
 }
