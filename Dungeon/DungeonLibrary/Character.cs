@@ -7,7 +7,7 @@
         //We need to declare the field.
         
 
-        public int Name { get; set; }
+        public string Name { get; set; }
         public int HitChance { get; set; }
         public int Block { get; set; }
         public int MaxLife { get; set; }
@@ -30,7 +30,7 @@
             }
         }
 
-        public Character(int name, int hitChance, int block, int maxLife, int life)
+        public Character(string name, int hitChance, int block, int maxLife, int life)
         {
             
             Name = name;
@@ -38,18 +38,19 @@
             Block = block;
             MaxLife = maxLife;
             Life = life;
+            
 
 
 
         }
 
-        public int AttBlock() { return Block; }
-        public int AttChance() { return HitChance; }
-        public int AttDamage() { return 0; }
+        public virtual int CalcBlock() { return Block; }
+        public virtual int CalcHitChance() { return HitChance; }
+        public virtual int CalcDamage() { return 0; }
 
         public override string ToString()
         {
-            return "Name" + Name + "Block" + Block + "Hit Chance" + HitChance + "Attack Damage" + 0 + "Max Life" + MaxLife + "Life" + Life + "Player Race" + PlayerRace;
+
                 
              
         }

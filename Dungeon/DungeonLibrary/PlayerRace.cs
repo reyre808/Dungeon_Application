@@ -6,13 +6,10 @@ using System.Threading.Tasks;
 
 namespace DungeonLibrary
 {
-    internal class PlayerRace
+    public enum Race
     {
-        public enum Race
-        {
-            Human,
-            Donkey,
-            Alien
-        }
+        Human,
+        Donkey,
+        Alien
     }
 }
