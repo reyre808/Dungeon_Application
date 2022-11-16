@@ -9,6 +9,10 @@ namespace DungeonLibrary
     internal class Weapons
     {
         public int MinDamage { get; set; }
+        
+
+
+        
         public int MaxDamage { get; set; }
         public string Name { get; set; }
         public int BonusHitChance { get; set; }

@@ -19,11 +19,11 @@
             get { return _life; }
             set
             {
-                if(value < MaxLife)
+                if(value <= MaxLife)
                 {
                     _life = value;
                 }
-                else
+                else if (value > MaxLife)
                 {
                     _life = MaxLife;
                 }
@@ -50,11 +50,23 @@
 
         public override string ToString()
         {
-            return "Block" + Block + "Hit Chance" + HitChance + "Attack Damage" + 0 + "Max Life" + MaxLife + "Life" + Life;
+
                 
              
         }
-
+        
+        public virtual int CalcBlock()
+        {
+            return  Block;
+        }
+        public virtual int CalcHitChance()
+        {
+            return HitChance;
+        }
+        public virtual int CalcDamage()
+        {
+            return 0;
+        }
 
 
     }
