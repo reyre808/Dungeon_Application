@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
+
 namespace Dungeon
 {
     internal class DungeonMain
@@ -132,6 +134,8 @@ namespace Dungeon
                         
                         break;
                 }
+
+                public Vampire()
                         do
                         {
             

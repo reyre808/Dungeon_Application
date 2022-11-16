@@ -34,8 +34,9 @@ namespace DungeonLibrary
 
 
         public Monster(string name, int hitChance, int block, int life, int maxLife, int maxDamage, int minDamage)
-            : base (name, hitChance, block, life, maxLife)
+            : base (name,hitChance, block, life, maxLife)
         {
+            
             MaxDamage = maxDamage;
             MinDamage = minDamage;
         }
