@@ -23,6 +23,13 @@ namespace Dungeon
             Console.WriteLine("Hello " + Console.ReadLine() + " Are You Ready?");
             Console.WriteLine("Y) Yes\nN) No");
             string yesOrNo = Console.ReadLine().ToUpper();
+
+            bool isPlaying = true;
+            bool isFighting = true;
+
+            do
+            {
+
             
             
             
@@ -38,8 +45,8 @@ namespace Dungeon
                         Console.WriteLine("Come Back When You Have Some Heart And Honor");
                         
                         break;
-            }
-            Console.WriteLine("WOAH!!!! ");
+            } while (true);
+            Console.WriteLine("");
             GetRoom();
 
             #region Create Player
@@ -57,8 +64,8 @@ namespace Dungeon
 
         }
 
-        public static void GetRoom()
-        {
+         public static void GetRoom()
+         {
 
             //Requirements:
             /*
@@ -94,86 +101,86 @@ namespace Dungeon
                         Console.WriteLine("The air is calm, gravestones as far as you can see. Not the place you want to be at night. ");
                         break;
                 }
-        }
+         }
 
-            //bool repeat = true;
-            //do
-            //{
+            bool repeat = true;
+            do
+            {
 
 
                 //TODO Create a Player
-            //Console.WriteLine("Welcome to the Dungeon!! ");
-            //Console.WriteLine("Please Enter Your Name and Hit Enter. ");
-            //
-            //
-            //Console.WriteLine("Hello " + Console.ReadLine() + " Are You Ready?");
-            //Console.WriteLine("Y) Yes\nN) No");
-            //string yesOrNo = Console.ReadLine().ToUpper();
-            //
-            //
-            //
-            //    switch (yesOrNo)
-            //    {
-            //        case "YES":
-            //        case "Y":
-            //            Console.WriteLine("Okay As You Wish, Lets Get Started");
-            //            break;
-            //
-            //        case "NO":
-            //        case "N":
-            //            Console.WriteLine("Come Back When You Have Some Heart And Honor");
-            //            
-            //            break;
-            //    }
-            //            do
-            //            {
-            //
-            //                    Console.WriteLine("Interaction Menu");
-            //                    Console.WriteLine("A) Attack\nB) Run Away\nC) Character Info\nD) Monster Info\nE) Exit");
-            //                    string playerChoice = Console.ReadLine().ToUpper();
-            //
-            //                    Console.Clear();
-            //
-            //                    switch (playerChoice)
-            //                    {
-            //                    case "A":
-            //                    case "ATTACK":
-            //                    case "ATT":
-            //                        Console.WriteLine("You Attacked The Monster\n\n" + " And Won!");
-            //                        repeat = true;
-            //                        break;
-            //
-            //                    case "B":
-            //                    case "RUN AWAY":
-            //                    case "RUN":
-            //                        Console.WriteLine("You Run Away From Battle\n\n");
-            //                        break;
-            //
-            //                    case "C":
-            //                    case "CHARACTER INFO":
-            //                    case "CHARACTER":
-            //                        Console.WriteLine("You Display Your Character Info\n\n");
-            //                        break;
-            //
-            //                    case "D":
-            //                    case "MONSTER INFO":
-            //                    case "MONSTER":
-            //                    case "M":
-            //                        Console.WriteLine("You Display The Monster's Info\n\n");
-            //                        break;
-            //
-            //                    case "E":
-            //                    case "EXIT":
-            //                        Console.WriteLine("You Have Exited The Game, Thanks For Playing\n\n");
-            //                        repeat = !repeat;
-            //                        break;
-            //                    }
-            //            } while (true);
-            //
-            //
-            //
-            //    
-            //} while (repeat);
+            Console.WriteLine("Welcome to the Dungeon!! ");
+            Console.WriteLine("Please Enter Your Name and Hit Enter. ");
+            
+            
+            Console.WriteLine("Hello " + Console.ReadLine() + " Are You Ready?");
+            Console.WriteLine("Y) Yes\nN) No");
+            string yesOrNo = Console.ReadLine().ToUpper();
+            
+            
+            
+                switch (yesOrNo)
+                {
+                    case "YES":
+                    case "Y":
+                        Console.WriteLine("Okay As You Wish, Lets Get Started");
+                        break;
+            
+                    case "NO":
+                    case "N":
+                        Console.WriteLine("Come Back When You Have Some Heart And Honor");
+                        
+                        break;
+                }
+                        do
+                        {
+            
+                                Console.WriteLine("Interaction Menu");
+                                Console.WriteLine("A) Attack\nB) Run Away\nC) Character Info\nD) Monster Info\nE) Exit");
+                                string playerChoice = Console.ReadLine().ToUpper();
+            
+                                Console.Clear();
+            
+                               switch (playerChoice)
+                               {
+                               case "A":
+                               case "ATTACK":
+                               case "ATT":
+                                   Console.WriteLine("You Attacked The Monster\n\n" + " And Won!");
+                                   repeat = true;
+                                   break;
+            
+                               case "B":
+                               case "RUN AWAY":
+                               case "RUN":
+                                   Console.WriteLine("You Run Away From Battle\n\n");
+                                   break;
+            
+                               case "C":
+                               case "CHARACTER INFO":
+                               case "CHARACTER":
+                                   Console.WriteLine("You Display Your Character Info\n\n");
+                                   break;
+            
+                               case "D":
+                                case "MONSTER INFO":
+                                case "MONSTER":
+                                case "M":
+                                    Console.WriteLine("You Display The Monster's Info\n\n");
+                                    break;
+            
+                                case "E":
+                                case "EXIT":
+                                    Console.WriteLine("You Have Exited The Game, Thanks For Playing\n\n");
+                                    repeat = !repeat;
+                                    break;
+                                }
+                        } while (true);
+            
+            
+            
+                
+            } while (repeat);
 
             //TODO Create A Monster
 
@@ -182,6 +189,6 @@ namespace Dungeon
 
         //END MAIN
     }//END CLASS
-}//END NAMESPACE
+} //END NAMESPACE
 
 
