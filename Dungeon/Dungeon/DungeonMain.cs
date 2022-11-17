@@ -22,15 +22,44 @@ namespace Dungeon
 
             //TODO Create a Player
             Console.WriteLine("Welcome to the Dungeon!! ");
+
+            Console.WriteLine(@"
+
+                                                                                            .      .                                
+                                                                                            |\____/|                                
+                                            ,--,  ,.-.                                     (\|----|/)
+               ,                   \,       '-,-`,'-.' | ._                                 \ 0  0 /
+              /|           \    ,   |\         }  )/  / `-,',                                |    |
+              [ ,          |\  /|   | |        /  \|  |/`  ,`                             ___/\../\____
+              | |       ,.`  `,` `, | |  _,...(   (      .',                            /     --       \ 
+              \  \  __ ,-` `  ,  , `/ |,'      Y     (   /_L\                          /  \         /   \
+               \  \_\,``,   ` , ,  /  |         )         _,/                         |    \___/___/(   |
+                \  '  `  ,_ _`_,-,<._.<        /         /                             \   /|  }{   | \  )
+                     ', `>.,`  `  `   ,., |_      |         /                           \  ||__}{__|  |  |
+                       \/`  `,   `   ,`  | /__,.-`    _,   `\                            \  |;;;;;;;\  \ / \_______     
+               -,-..\  _  \  `  /  ,  / `._) _,-\`       \                                \ /;;;;;;;;| [,,[|======'
+                \_,,.) /\    ` /  / ) (-,, ``    ,        |                                |;;;;;;/ |     /
+               ,` )  | \_\       '-`  |  `(               \                                ||;;|\   |
+              /  /```(   , --, ,' \   |`<`    ,            |                               ||;;/|   /
+             /  /_,--`\   <\  V /> ,` )<_/)  | \      _____)                               \_|:||__|
+       ,-, ,`   `   (_,\ \    |   /) / __/  /   `----`                                      \ ;||  /
+      (-, \           ) \ ('_.-._)/ /,`    /                                                |= || =|
+      | /  `          `/ \\ V   V, /`     /                                                 |= /\ =|
+   ,--\(        ,     <_/`\\     ||      /                                                  /_/  \_\
+  (   ,``-     \/|         \-A.A-`|     /
+ ,>,_ )_,..(    )\          -,,_-`  _--`
+(_ \|`   _,/_  /  \_            ,--`
+ \( `   <.,../`     `-.._   _,-`    ");
+
+
+
             Console.WriteLine("Please Enter Your Name and Hit Enter. ");
 
 
             Console.WriteLine("Hello " + Console.ReadLine() + " Are You Ready?");
             Console.WriteLine("Y) Yes\nN) No");
             string yesOrNo = Console.ReadLine().ToUpper();
-
             string playerName = Console.ReadLine();
-
             switch (yesOrNo)
             {
                 case "YES":
@@ -44,11 +73,12 @@ namespace Dungeon
                     break;
                     bool notReady = false;
             }
-           
+
+            Console.Clear();
             /* Bonus : Customizing the weapons.
              * 1) Construct custom weapon objects.
              */
-             
+
             Weapons sword1 = new Weapons(30, 55, "Long Sword", 15, true, WeaponType.Melee);
             Weapons sword2 = new Weapons(15, 45, "Sword", 15, true, WeaponType.Melee);
             Weapons sword3 = new Weapons(35, 65, "Battle Axe", 15, true, WeaponType.Melee);
@@ -91,22 +121,24 @@ namespace Dungeon
 
             } while (playerIsChoosingWeapon);
 
+            Console.Clear();
+
             bool playerIsChoosingRace = true;
             do
             {
-            Console.Clear();
-            Console.WriteLine("\nChoose a Race:" +
-                "\n(H) Human" +
-                "\n(D) Donkey" +
-                "\n(A) Alien");
+                Console.Clear();
+                Console.WriteLine("\nChoose a Race:" +
+                    "\n(H) Human" +
+                    "\n(D) Donkey" +
+                    "\n(A) Alien");
 
-            ConsoleKey raceChoice = Console.ReadKey().Key;
+                ConsoleKey raceChoice = Console.ReadKey().Key;
 
                 switch (raceChoice)
                 {
                     case ConsoleKey.H:
                         player.Race = PlayerRace.Human;
-                        playerIsChoosingRace=false;
+                        playerIsChoosingRace = false;
                         break;
                     case ConsoleKey.D:
                         player.Race = PlayerRace.Donkey;
@@ -123,6 +155,8 @@ namespace Dungeon
 
             } while (playerIsChoosingRace);
 
+            Console.Clear();
+
 
 
 
@@ -132,29 +166,65 @@ namespace Dungeon
 
             bool playerIsAlive = true;
             bool playerIsFighting = true;
+
             
+
+           
+               
+
+
+                switch (score)
+                {
+
+                    case 3:
+                        Console.WriteLine("\nYou leveled up!\n");
+                        player.MaxLife += 50;
+                        player.Life = player.MaxLife;
+                        break;
+                    case 6:
+                        Console.WriteLine("\nYou leveled up!\n");
+                        player.MaxLife += 50;
+                        player.Life = player.MaxLife;
+                        break;
+                    case 10:
+                        Console.WriteLine("\nYou leveled up!\n");
+                        player.MaxLife += 50;
+                        player.Life = player.MaxLife;
+                        Weapons sword4 = new Weapons(65, 85, "Champion's Axe", 25, true, WeaponType.Melee);
+
+                        Console.WriteLine("\nYou found a Champion's Axe!\n");
+                        player.EquippedWeapon = sword3;
+                        break;
+
+
+                };
+
+                Console.ResetColor();
+
+            
+
             do
             {
                 Console.WriteLine("");
                 GetRoom();
 
-            Goblin g1 = new Goblin();
-            SpinedRat r1 = new SpinedRat();
-            LizardMan l1 = new LizardMan();
-            Werewolf w1 = new Werewolf();
+                Goblin g1 = new Goblin();
+                SpinedRat r1 = new SpinedRat();
+                LizardMan l1 = new LizardMan();
+                Werewolf w1 = new Werewolf();
 
-            Monster[] monsters =
-            {
+                Monster[] monsters =
+                {
                 g1,
                 r1,
                 l1,
                 w1
             };
-            Random rand = new Random();
-            int randomNbr = rand.Next(monsters.Length);
-            Monster monster = monsters[randomNbr];
+                Random rand = new Random();
+                int randomNbr = rand.Next(monsters.Length);
+                Monster monster = monsters[randomNbr];
 
-            Console.WriteLine("You run into a {0}!", monster.Name);
+                Console.WriteLine("You run into a {0}!\n", monster.Name);
 
                 //TODO Create a Player
 
@@ -177,11 +247,11 @@ namespace Dungeon
                             Combat.DoBattle(player, monster);
 
                             //Check Monster Health
-                            if(monster.Life <= 0)
+                            if (monster.Life <= 0)
                             {
                                 //Use green text to highlight winning combat:
                                 Console.ForegroundColor = ConsoleColor.Green;
-                                Console.WriteLine("\nYou killed {0}", monster.Name);
+                                Console.WriteLine("\nYou killed {0}\n", monster.Name);
                                 Console.ResetColor();
 
                                 score++;
@@ -198,7 +268,7 @@ namespace Dungeon
                             Console.WriteLine("You Run Away From Battle\n\n");
 
                             //Give monster an attack of opportunity when the player attempts to run away:
-                            Console.WriteLine($"{monster.Name} attacks you as you run away!");
+                            Console.WriteLine($"{monster.Name} attacks you as you run away!\n");
                             Combat.DoAttack(monster, player);
 
                             playerIsFighting = false;
@@ -207,15 +277,15 @@ namespace Dungeon
                         case "C":
                         case "CHARACTER INFO":
                         case "CHARACTER":
-                            Console.WriteLine("You Display Your Character Info\n\n");
+                            Console.WriteLine(player);
                             break;
 
                         case "D":
                         case "MONSTER INFO":
                         case "MONSTER":
                         case "M":
-                            Console.WriteLine("You Display The Monster's Info\n\n");
-                            playerIsFighting=true;
+                            Console.WriteLine(monster);
+                            playerIsFighting = true;
                             break;
 
                         case "E":
@@ -246,37 +316,37 @@ namespace Dungeon
              */
 
             Console.WriteLine("Starting Your Adventure");
-            Console.WriteLine();
+            
 
 
             Console.WriteLine();
             int random = 0;
             Random randomRoom = new Random();
             random = randomRoom.Next(1, 6);
-
+            Console.WriteLine();
             switch (random)
             {
                 case 1:
-                    Console.WriteLine("The moldy air fills the room, You feel the stagnant water seep through your shoes.\n You carefully step around what seems to be jagged " +
-                        "rocks and cave slime ");
+                    Console.WriteLine("\nThe moldy air fills the room, You feel the stagnant water seep through your shoes.\nYou carefully step around what seems to be jagged " +
+                        "rocks and cave slime \n");
                     break;
                 case 2:
-                    Console.WriteLine("The scorching sun is burning your skin as you fight your way through miles of sand and ancient ruins.\n Not a drop of water in sight.");
+                    Console.WriteLine("\nThe scorching sun is burning your skin as you fight your way through miles of sand and ancient ruins.\nNot a drop of water in sight.\n");
                     break;
                 case 3:
-                    Console.WriteLine("Heavy vegetation covers the forest, long tree vines block most of the pathways around the area.  \nYou hear wild animals faintly in the distance ");
+                    Console.WriteLine("\nHeavy vegetation covers the forest, long tree vines block most of the pathways around the area.  \nYou hear wild animals faintly in the distance \n");
                     break;
                 case 4:
-                    Console.WriteLine("The floor feels hot to the step. The smell of sulfur and coal are almost overwhelming. \n Seems like a bad place to light a match. ");
+                    Console.WriteLine("\nThe floor feels hot to the step. The smell of sulfur and coal are almost overwhelming. \nSeems like a bad place to light a match. \n");
                     break;
                 case 5:
-                    Console.WriteLine("The air is calm, gravestones as far as you can see. \nNot the place you want to be at night. ");
+                    Console.WriteLine("\nThe air is calm, gravestones as far as you can see. \nNot the place you want to be at night. \n");
                     break;
             }
 
             //TODO Create A Monster
 
-            
+
 
 
             //TODO Create A Room
@@ -284,7 +354,7 @@ namespace Dungeon
 
             //END MAIN
         }//END CLASS
-        
+
 
     }
 }//END NAMESPACE
