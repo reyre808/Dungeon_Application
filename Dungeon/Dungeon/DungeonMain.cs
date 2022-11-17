@@ -95,7 +95,19 @@ namespace Dungeon
                         case "A":
                         case "ATTACK":
                         case "ATT":
-                            Console.WriteLine("You Attacked The Monster\n\n" + " And Won!");
+                            //Check Monster Health
+                            if(monster.Life <= 0)
+                            {
+                                //Use green text to highlight winning combat:
+                                Console.ForegroundColor = ConsoleColor.Green;
+                                Console.WriteLine("\nYou killed {0}", monster.Name);
+                                Console.ResetColor();
+
+                                score++;
+
+                                //end this combat loop
+                                playerIsFighting = false;
+                            }
                             playerIsFighting = true;
                             break;
 
