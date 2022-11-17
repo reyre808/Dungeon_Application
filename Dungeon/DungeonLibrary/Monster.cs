@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DungeonLibrary
 {
-    internal class Monster : Character
+    public class Monster : Character
     {
         //FIELDS
         private int _minDamage;
@@ -29,9 +29,12 @@ namespace DungeonLibrary
         public int MaxDamage { get; set; }
 
         string monsterDescription = "";
-        
-        
 
+
+        public Monster()
+        {
+
+        }
 
         public Monster(string name, int hitChance, int block, int life, int maxLife, int maxDamage, int minDamage)
             : base (name,hitChance, block, life, maxLife)
