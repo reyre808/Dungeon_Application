@@ -19,8 +19,8 @@ namespace DungeonLibrary
         public Werewolf()
         {
             Name = "Romeo";
-            Life = 85;
             MaxLife = 95;
+            Life = 85;
             HitChance = 65;
             Block = 25;
             MinDamage = 45;

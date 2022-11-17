@@ -31,12 +31,6 @@ namespace Dungeon
 
             string playerName = Console.ReadLine();
 
-            //Construct players weapon:
-            Weapons weapon = new Weapons(70, 80, "Sword", 15, true, WeaponType.Melee);
-
-            Player player = new Player(playerName, 70, 5, 100, 100, PlayerRace.Human, weapon);
-
-
             switch (yesOrNo)
             {
                 case "YES":
@@ -51,6 +45,90 @@ namespace Dungeon
                     bool notReady = false;
             }
            
+            /* Bonus : Customizing the weapons.
+             * 1) Construct custom weapon objects.
+             */
+             
+            Weapons sword1 = new Weapons(30, 55, "Long Sword", 15, true, WeaponType.Melee);
+            Weapons sword2 = new Weapons(15, 45, "Sword", 15, true, WeaponType.Melee);
+            Weapons sword3 = new Weapons(35, 65, "Battle Axe", 15, true, WeaponType.Melee);
+
+            // Counter
+            bool playerIsChoosingWeapon = true;
+
+            Weapons chosenWeapon;
+
+            Player player = new Player(playerName, 70, 5, 100, 100, PlayerRace.Human, sword1);
+
+            do
+            {
+                Console.WriteLine("\nChoose your weapon:\n" +
+                    "(L) Long Sword\n" +
+                    "(S) Sword\n" +
+                    "(B) Battle Axe\n");
+
+                ConsoleKey userKey = Console.ReadKey().Key;
+
+                switch (userKey)
+                {
+                    case ConsoleKey.L:
+                        chosenWeapon = sword1;
+                        playerIsChoosingWeapon = false;
+                        break;
+                    case ConsoleKey.S:
+                        chosenWeapon = sword2;
+                        playerIsChoosingWeapon = false;
+                        break;
+                    case ConsoleKey.B:
+                        chosenWeapon = sword3;
+                        playerIsChoosingWeapon = false;
+                        break;
+                    default:
+                        Console.WriteLine("Input invalid . Please press (S) , (L) , or (A).");
+                        break;
+                }
+
+
+            } while (playerIsChoosingWeapon);
+
+            bool playerIsChoosingRace = true;
+            do
+            {
+            Console.Clear();
+            Console.WriteLine("\nChoose a Race:" +
+                "\n(H) Human" +
+                "\n(D) Donkey" +
+                "\n(A) Alien");
+
+            ConsoleKey raceChoice = Console.ReadKey().Key;
+
+                switch (raceChoice)
+                {
+                    case ConsoleKey.H:
+                        player.Race = PlayerRace.Human;
+                        playerIsChoosingRace=false;
+                        break;
+                    case ConsoleKey.D:
+                        player.Race = PlayerRace.Donkey;
+                        playerIsChoosingRace = false;
+                        break;
+                    case ConsoleKey.A:
+                        player.Race = PlayerRace.Alien;
+                        playerIsChoosingRace = false;
+                        break;
+                    default:
+                        Console.WriteLine("Invalid input, Please Press (H) , (D) , or (A).");
+                        break;
+                }
+
+            } while (playerIsChoosingRace);
+
+
+
+
+
+
+
 
             bool playerIsAlive = true;
             bool playerIsFighting = true;
@@ -95,6 +173,9 @@ namespace Dungeon
                         case "A":
                         case "ATTACK":
                         case "ATT":
+
+                            Combat.DoBattle(player, monster);
+
                             //Check Monster Health
                             if(monster.Life <= 0)
                             {
@@ -115,6 +196,11 @@ namespace Dungeon
                         case "RUN AWAY":
                         case "RUN":
                             Console.WriteLine("You Run Away From Battle\n\n");
+
+                            //Give monster an attack of opportunity when the player attempts to run away:
+                            Console.WriteLine($"{monster.Name} attacks you as you run away!");
+                            Combat.DoAttack(monster, player);
+
                             playerIsFighting = false;
                             break;
 

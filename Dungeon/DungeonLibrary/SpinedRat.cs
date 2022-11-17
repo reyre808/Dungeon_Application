@@ -19,8 +19,8 @@ namespace DungeonLibrary
         public SpinedRat()
         {
             Name = "Pinky";
-            Life = 35;
             MaxLife = 45;
+            Life = 35;
             HitChance = 50;
             Block = 0;
             MinDamage = 10;

@@ -19,8 +19,8 @@ namespace DungeonLibrary
         public LizardMan()
         {
             Name = "Chomp Chomp";
-            Life = 80;
             MaxLife = 90;
+            Life = 80;
             HitChance = 60;
             Block = 40;
             MinDamage = 40;
