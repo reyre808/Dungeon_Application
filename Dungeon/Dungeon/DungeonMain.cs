@@ -29,8 +29,14 @@ namespace Dungeon
             Console.WriteLine("Y) Yes\nN) No");
             string yesOrNo = Console.ReadLine().ToUpper();
 
-            bool isPlaying = true;
-            bool isFighting = true;
+            string playerName = Console.ReadLine();
+
+            //Construct players weapon:
+            Weapons weapon = new Weapons(70, 80, "Sword", 15, true, WeaponType.Melee);
+
+            Player player = new Player(playerName, 70, 5, 100, 100, PlayerRace.Human, weapon);
+
+
             switch (yesOrNo)
             {
                 case "YES":
@@ -44,18 +50,33 @@ namespace Dungeon
                     break;
                     bool notReady = false;
             }
-            Goblin g1 = new Goblin();
-            SpinedRat r1 = new SpinedRat();
-            LizardMan l1 = new LizardMan();
-            Werewolf w1 = new Werewolf();
            
-            bool isInCombat = true;
-            bool repeat = true;
+
+            bool playerIsAlive = true;
+            bool playerIsFighting = true;
+            
             do
             {
                 Console.WriteLine("");
                 GetRoom();
 
+            Goblin g1 = new Goblin();
+            SpinedRat r1 = new SpinedRat();
+            LizardMan l1 = new LizardMan();
+            Werewolf w1 = new Werewolf();
+
+            Monster[] monsters =
+            {
+                g1,
+                r1,
+                l1,
+                w1
+            };
+            Random rand = new Random();
+            int randomNbr = rand.Next(monsters.Length);
+            Monster monster = monsters[randomNbr];
+
+            Console.WriteLine("You run into a {0}!", monster.Name);
 
                 //TODO Create a Player
 
@@ -75,13 +96,14 @@ namespace Dungeon
                         case "ATTACK":
                         case "ATT":
                             Console.WriteLine("You Attacked The Monster\n\n" + " And Won!");
-                            repeat = true;
+                            playerIsFighting = true;
                             break;
 
                         case "B":
                         case "RUN AWAY":
                         case "RUN":
                             Console.WriteLine("You Run Away From Battle\n\n");
+                            playerIsFighting = false;
                             break;
 
                         case "C":
@@ -95,18 +117,26 @@ namespace Dungeon
                         case "MONSTER":
                         case "M":
                             Console.WriteLine("You Display The Monster's Info\n\n");
+                            playerIsFighting=true;
                             break;
 
                         case "E":
                         case "EXIT":
                             Console.WriteLine("You Have Exited The Game, Thanks For Playing\n\n");
-                            isInCombat = false;
-                            repeat = false;
+                            playerIsFighting = false;
+                            playerIsAlive = false;
                             break;
                     }
-                } while (isInCombat);
 
-            } while (repeat);
+                    if (player.Life <= 0)
+                    {
+                        Console.WriteLine("Game Over");
+                        playerIsFighting = false;
+                        playerIsAlive = false;
+                    }
+                } while (playerIsFighting);
+
+            } while (playerIsAlive);
         }
         public static void GetRoom()
         {
@@ -129,20 +159,20 @@ namespace Dungeon
             switch (random)
             {
                 case 1:
-                    Console.WriteLine("The moldy air fills the room, You feel the stagnant water seep through your shoes. You carefully step around what seems to be jagged " +
-                        "rocks and cave slime");
+                    Console.WriteLine("The moldy air fills the room, You feel the stagnant water seep through your shoes.\n You carefully step around what seems to be jagged " +
+                        "rocks and cave slime ");
                     break;
                 case 2:
-                    Console.WriteLine("The scorching sun is burning your skin as you fight your way through miles of sand and ancient ruins. Not a drop of water in sight.");
+                    Console.WriteLine("The scorching sun is burning your skin as you fight your way through miles of sand and ancient ruins.\n Not a drop of water in sight.");
                     break;
                 case 3:
-                    Console.WriteLine("Heavy vegetation covers the forest, long tree vines block most of the pathways around the area.  You hear wild animals faintly in the distance ");
+                    Console.WriteLine("Heavy vegetation covers the forest, long tree vines block most of the pathways around the area.  \nYou hear wild animals faintly in the distance ");
                     break;
                 case 4:
-                    Console.WriteLine("The floor feels hot to the step. The smell of sulfur and coal are almost overwhelming.  Seems like a bad place to light a match. ");
+                    Console.WriteLine("The floor feels hot to the step. The smell of sulfur and coal are almost overwhelming. \n Seems like a bad place to light a match. ");
                     break;
                 case 5:
-                    Console.WriteLine("The air is calm, gravestones as far as you can see. Not the place you want to be at night. ");
+                    Console.WriteLine("The air is calm, gravestones as far as you can see. \nNot the place you want to be at night. ");
                     break;
             }
 

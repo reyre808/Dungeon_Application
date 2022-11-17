@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DungeonLibrary
 {
-    internal class Weapons
+    public class Weapons
     {
         public int MinDamage { get; set; }
         

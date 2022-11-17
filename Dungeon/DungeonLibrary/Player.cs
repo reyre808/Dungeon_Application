@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DungeonLibrary
 {
-    internal class Player : Character//Inheritance syntax: Child Class : Parent Class
+    public class Player : Character//Inheritance syntax: Child Class : Parent Class
     {
         //FIELDS
         //_life is inherited from Character.
@@ -14,13 +14,13 @@ namespace DungeonLibrary
         //PROPS
         //Name, HitChance, Block, Life, and MaxLife are inherited from Character.
         //UNIQUE properties of Player:
-        public Race Race { get; set; }
+        public PlayerRace Race { get; set; }
         public Weapons EquippedWeapon { get; set; }
 
         //CONSTRUCTOR
         //We need to take in all the properties as parameters,
         //EVEN the ones that were inherited from Character.
-        public Player(string name, int hitChance, int block, int life, int maxLife, Race race, Weapons equippedWeapon) : base (name, hitChance, block, life, maxLife)
+        public Player(string name, int hitChance, int block, int life, int maxLife, PlayerRace race, Weapons equippedWeapon) : base (name, hitChance, block, life, maxLife)
         {
             Race = race;
             EquippedWeapon = equippedWeapon;
@@ -35,13 +35,13 @@ namespace DungeonLibrary
 
             switch (Race)
             {
-                case Race.Human:
+                case PlayerRace.Human:
                     raceDescription = "Just an average everyday normal guy";
                     break;
-                case Race.Alien:
+                case PlayerRace.Alien:
                     raceDescription = "Slimey Nasty Ol' Thing";
                     break;
-                case Race.Donkey:
+                case PlayerRace.Donkey:
                     raceDescription = "No explaination needed";
                     break;
             }
