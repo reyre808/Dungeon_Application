@@ -19,8 +19,8 @@ namespace DungeonLibrary
         public Goblin()
         {
             Name = "Gordo";
-            Life = 55;
             MaxLife = 65;
+            Life = 55;
             HitChance = 89;
             Block = 10;
             MinDamage = 30;
