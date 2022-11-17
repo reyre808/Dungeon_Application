@@ -17,6 +17,8 @@ namespace Dungeon
             #region Introduction
             //Print a welcome.
             #endregion
+            int score = 0;
+
 
             //TODO Create a Player
             Console.WriteLine("Welcome to the Dungeon!! ");
