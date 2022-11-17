@@ -29,7 +29,10 @@
                 }
             }
         }
+        public Character()
+        {
 
+        }
         public Character(string name, int hitChance, int block, int maxLife, int life)
         {
             
@@ -52,21 +55,10 @@
         {
 
                 
-             
+             return base.ToString();
         }
         
-        public virtual int CalcBlock()
-        {
-            return  Block;
-        }
-        public virtual int CalcHitChance()
-        {
-            return HitChance;
-        }
-        public virtual int CalcDamage()
-        {
-            return 0;
-        }
+       
 
 
     }

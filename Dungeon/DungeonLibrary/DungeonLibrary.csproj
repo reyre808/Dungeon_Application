@@ -6,8 +6,4 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\Dungeon\Dungeon.csproj" />
-  </ItemGroup>
-
 </Project>
