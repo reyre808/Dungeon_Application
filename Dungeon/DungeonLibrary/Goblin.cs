@@ -29,8 +29,9 @@ namespace DungeonLibrary
         }
         public override string ToString()
         {
-            return base.ToString() + (IsHungry ? "He looks hungry, Hes really fast!"
-                : "He looks slow");
+            Console.ForegroundColor = ConsoleColor.Red;
+            return base.ToString() + (IsHungry ? "\nHe looks hungry, Hes really fast!"
+                : "\nHe looks slow");
 
         }
 

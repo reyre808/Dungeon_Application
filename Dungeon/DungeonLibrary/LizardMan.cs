@@ -22,15 +22,16 @@ namespace DungeonLibrary
             MaxLife = 90;
             Life = 80;
             HitChance = 60;
-            Block = 40;
+            Block = 15;
             MinDamage = 40;
             MaxDamage = 70;
             IsScaly = true;
         }
         public override string ToString()
         {
-            return base.ToString() + (IsScaly ? "He is covered in scales that look like armor"
-                : "He doesnt seem to have his scales!");
+            Console.ForegroundColor = ConsoleColor.Red;
+            return base.ToString() + (IsScaly ? "\nHe is covered in scales that look like armor"
+                : "\nHe doesnt seem to have his scales!");
 
         }
 

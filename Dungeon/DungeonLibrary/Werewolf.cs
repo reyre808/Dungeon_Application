@@ -22,15 +22,16 @@ namespace DungeonLibrary
             MaxLife = 95;
             Life = 85;
             HitChance = 65;
-            Block = 25;
+            Block = 15;
             MinDamage = 45;
             MaxDamage = 70;
             IsFullMoon = true;
         }
         public override string ToString()
         {
-            return base.ToString() + (IsFullMoon ? "Uh oh its a full moon!!"
-                : "He seems to be weakened");
+            Console.ForegroundColor = ConsoleColor.Red;
+            return base.ToString() + (IsFullMoon ? "\nUh oh its a full moon!!"
+                : "\nHe seems to be weakened");
 
         }
 

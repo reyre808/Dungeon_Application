@@ -26,7 +26,7 @@ namespace DungeonLibrary
             //Thread.Sleep() in the System.Threading namespace
             //will provide this brief pause.
 
-            Thread.Sleep(30);
+            Thread.Sleep(2000);
 
             //If the attacker "hits"
             if(roll <= (attacker.CalcHitChance() - defender.CalcBlock()))
@@ -39,20 +39,22 @@ namespace DungeonLibrary
 
                 //Print the result in red:
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("{0} hit {1} for {2} damage!",
+                Console.WriteLine("{0} Hit for {2} damage!\n",
                     attacker.Name, defender.Name, damageDealt);
 
                 Console.ResetColor();
             }
             else
             {
-                Console.WriteLine("{0} missed!", attacker.Name);
+                Console.WriteLine("{0} Missed!\n", attacker.Name);
             }
         }
 
         public static void DoBattle(Player player, Monster monster)
         {
             DoAttack(player, monster);
+
+            Thread.Sleep(2000);
 
             //If the monster survives the player's attack,
             //They attack the player.

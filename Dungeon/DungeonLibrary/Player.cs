@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DungeonLibrary;
 
 namespace DungeonLibrary
 {
@@ -42,11 +43,11 @@ namespace DungeonLibrary
                     raceDescription = "Slimey Nasty Ol' Thing";
                     break;
                 case PlayerRace.Donkey:
-                    raceDescription = "No explaination needed";
+                    raceDescription = "A Valiant Steed!";
                     break;
             }
 
-            return base.ToString() + "\nDescription" + raceDescription + "Weapon: " + EquippedWeapon;
+            return base.ToString() + "\nDescription : " + raceDescription + "\nWeapon : " + EquippedWeapon;
         }
 
         public override int CalcDamage()

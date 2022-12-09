@@ -39,14 +39,14 @@ namespace DungeonLibrary
         public Monster(string name, int hitChance, int block, int life, int maxLife, int maxDamage, int minDamage)
             : base (name,hitChance, block, life, maxLife)
         {
-            
+            Name = name;
             MaxDamage = maxDamage;
             MinDamage = minDamage;
         }
 
         public override string ToString()
         {
-            return base.ToString() + $"\nDamage: {MinDamage} - {MaxDamage}";
+            return base.ToString() + $"\nDamage : {MinDamage} - {MaxDamage}";
         }
 
         public override int CalcDamage()

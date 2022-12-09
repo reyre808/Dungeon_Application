@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DungeonLibrary;
 
 namespace DungeonLibrary
 {
@@ -32,7 +33,7 @@ namespace DungeonLibrary
 
         public override string ToString()
         {
-            return "Mininmal Damage" + MinDamage + "Maximum Damage" + MaxDamage + "Name" + Name + "Bonus Hit Chance" + BonusHitChance + "Is Two Handed" + IsTwoHanded + "Type" + Type;
+            return "\nMininmal Damage : " + MinDamage + "\nMaximum Damage : " + MaxDamage + "\nWeapon Name : " + Name + "\nBonus Hit Chance : " + BonusHitChance + "\nIs Two Handed : " + IsTwoHanded + "\nType : " + Type;
         }
 
     }
