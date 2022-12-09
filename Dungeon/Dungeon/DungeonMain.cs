@@ -21,42 +21,18 @@ namespace Dungeon
 
 
             //TODO Create a Player
+            Console.ForegroundColor = ConsoleColor.DarkMagenta;
+            Console.BackgroundColor = ConsoleColor.White;
             Console.WriteLine("Welcome to the Dungeon!! ");
 
-            Console.WriteLine(@"
-
-                                                                                            .      .                                
-                                                                                            |\____/|                                
-                                            ,--,  ,.-.                                     (\|----|/)
-               ,                   \,       '-,-`,'-.' | ._                                 \ 0  0 /
-              /|           \    ,   |\         }  )/  / `-,',                                |    |
-              [ ,          |\  /|   | |        /  \|  |/`  ,`                             ___/\../\____
-              | |       ,.`  `,` `, | |  _,...(   (      .',                            /     --       \ 
-              \  \  __ ,-` `  ,  , `/ |,'      Y     (   /_L\                          /  \         /   \
-               \  \_\,``,   ` , ,  /  |         )         _,/                         |    \___/___/(   |
-                \  '  `  ,_ _`_,-,<._.<        /         /                             \   /|  }{   | \  )
-                     ', `>.,`  `  `   ,., |_      |         /                           \  ||__}{__|  |  |
-                       \/`  `,   `   ,`  | /__,.-`    _,   `\                            \  |;;;;;;;\  \ / \_______     
-               -,-..\  _  \  `  /  ,  / `._) _,-\`       \                                \ /;;;;;;;;| [,,[|======'
-                \_,,.) /\    ` /  / ) (-,, ``    ,        |                                |;;;;;;/ |     /
-               ,` )  | \_\       '-`  |  `(               \                                ||;;|\   |
-              /  /```(   , --, ,' \   |`<`    ,            |                               ||;;/|   /
-             /  /_,--`\   <\  V /> ,` )<_/)  | \      _____)                               \_|:||__|
-       ,-, ,`   `   (_,\ \    |   /) / __/  /   `----`                                      \ ;||  /
-      (-, \           ) \ ('_.-._)/ /,`    /                                                |= || =|
-      | /  `          `/ \\ V   V, /`     /                                                 |= /\ =|
-   ,--\(        ,     <_/`\\     ||      /                                                  /_/  \_\
-  (   ,``-     \/|         \-A.A-`|     /
- ,>,_ )_,..(    )\          -,,_-`  _--`
-(_ \|`   _,/_  /  \_            ,--`
- \( `   <.,../`     `-.._   _,-`    ");
-
-
-
+            Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("Please Enter Your Name and Hit Enter. ");
-
-
+            Console.ResetColor();
+            Console.ForegroundColor= ConsoleColor.White;
+            
+            Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("Hello " + Console.ReadLine() + " Are You Ready?");
+            Console.ResetColor();
             Console.WriteLine("Y) Yes\nN) No");
             string yesOrNo = Console.ReadLine().ToUpper();
             string playerName = Console.ReadLine();
@@ -65,6 +41,7 @@ namespace Dungeon
                 case "YES":
                 case "Y":
                     Console.WriteLine("Okay As You Wish, Lets Get Started");
+                    Console.WriteLine("Press Any Key To Continue");
                     break;
 
                 case "NO":
@@ -73,7 +50,7 @@ namespace Dungeon
                     break;
                     bool notReady = false;
             }
-
+            Console.ReadKey();
             Console.Clear();
             /* Bonus : Customizing the weapons.
              * 1) Construct custom weapon objects.
@@ -92,10 +69,14 @@ namespace Dungeon
 
             do
             {
-                Console.WriteLine("\nChoose your weapon:\n" +
-                    "(L) Long Sword\n" +
-                    "(S) Sword\n" +
-                    "(B) Battle Axe\n");
+                Console.ForegroundColor = ConsoleColor.DarkMagenta;
+                Console.BackgroundColor = ConsoleColor.White;
+                Console.WriteLine("\nChoose your weapon:\n");
+                Console.ResetColor();
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("(L) Long Sword - Long damascus blade worthy of a KING\n" + 
+                    "(S) Sword - A short blade used for close and fast combat\n" +
+                    "(B) Battle Axe - A weapon used by vikings and true warriors\n");
 
                 ConsoleKey userKey = Console.ReadKey().Key;
 
@@ -127,8 +108,12 @@ namespace Dungeon
             do
             {
                 Console.Clear();
-                Console.WriteLine("\nChoose a Race:" +
-                    "\n(H) Human" +
+                Console.ForegroundColor = ConsoleColor.DarkMagenta;
+                Console.BackgroundColor = ConsoleColor.White;
+                Console.WriteLine("\nChoose a Race:");
+                Console.ResetColor();
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("\n(H) Human" +
                     "\n(D) Donkey" +
                     "\n(A) Alien");
 
@@ -167,41 +152,41 @@ namespace Dungeon
             bool playerIsAlive = true;
             bool playerIsFighting = true;
 
-            
-
-           
-               
 
 
-                switch (score)
-                {
-
-                    case 3:
-                        Console.WriteLine("\nYou leveled up!\n");
-                        player.MaxLife += 50;
-                        player.Life = player.MaxLife;
-                        break;
-                    case 6:
-                        Console.WriteLine("\nYou leveled up!\n");
-                        player.MaxLife += 50;
-                        player.Life = player.MaxLife;
-                        break;
-                    case 10:
-                        Console.WriteLine("\nYou leveled up!\n");
-                        player.MaxLife += 50;
-                        player.Life = player.MaxLife;
-                        Weapons sword4 = new Weapons(65, 85, "Champion's Axe", 25, true, WeaponType.Melee);
-
-                        Console.WriteLine("\nYou found a Champion's Axe!\n");
-                        player.EquippedWeapon = sword3;
-                        break;
 
 
-                };
 
-                Console.ResetColor();
 
-            
+            switch (score)
+            {
+
+                case 3:
+                    Console.WriteLine("\nYou leveled up!\n");
+                    player.MaxLife += 50;
+                    player.Life = player.MaxLife;
+                    break;
+                case 6:
+                    Console.WriteLine("\nYou leveled up!\n");
+                    player.MaxLife += 50;
+                    player.Life = player.MaxLife;
+                    break;
+                case 10:
+                    Console.WriteLine("\nYou leveled up!\n");
+                    player.MaxLife += 50;
+                    player.Life = player.MaxLife;
+                    Weapons sword4 = new Weapons(65, 85, "Champion's Axe", 25, true, WeaponType.Melee);
+
+                    Console.WriteLine("\nYou found a Champion's Axe!\n");
+                    player.EquippedWeapon = sword3;
+                    break;
+
+
+            };
+
+            Console.ResetColor();
+
+
 
             do
             {
@@ -224,6 +209,7 @@ namespace Dungeon
                 int randomNbr = rand.Next(monsters.Length);
                 Monster monster = monsters[randomNbr];
 
+                Console.ForegroundColor = ConsoleColor.Cyan;
                 Console.WriteLine("You run into a {0}!\n", monster.Name);
 
                 //TODO Create a Player
@@ -231,9 +217,13 @@ namespace Dungeon
 
                 do
                 {
-
-                    Console.WriteLine("Interaction Menu");
-                    Console.WriteLine("A) Attack\nB) Run Away\nC) Character Info\nD) Monster Info\nE) Exit");
+                    Console.ForegroundColor = ConsoleColor.DarkMagenta;
+                    Console.BackgroundColor = ConsoleColor.White;
+                    Console.WriteLine("\n********************************Interaction Menu********************************");
+                    Console.ResetColor();
+                    Console.ForegroundColor = ConsoleColor.DarkMagenta;
+                    Console.WriteLine();
+                    Console.WriteLine("A) Attack\nB) Run Away\nC) Character Info\nD) Monster Info\nE) Exit\n" + "Monsters Killed : " + score);
                     string playerChoice = Console.ReadLine().ToUpper();
 
                     Console.Clear();
@@ -270,6 +260,7 @@ namespace Dungeon
                             //Give monster an attack of opportunity when the player attempts to run away:
                             Console.WriteLine($"{monster.Name} attacks you as you run away!\n");
                             Combat.DoAttack(monster, player);
+                            Console.Clear();
 
                             playerIsFighting = false;
                             break;
@@ -290,7 +281,8 @@ namespace Dungeon
 
                         case "E":
                         case "EXIT":
-                            Console.WriteLine("You Have Exited The Game, Thanks For Playing\n\n");
+                            Console.ForegroundColor= ConsoleColor.DarkGreen;
+                            Console.WriteLine("You Have Exited The Game, Thanks For Playing\n\n" + "Final Score : " + score);
                             playerIsFighting = false;
                             playerIsAlive = false;
                             break;
@@ -314,11 +306,10 @@ namespace Dungeon
              * 1. Create a collection of room descriptions
              * 2.Randomly print one of those room descriptions to the console.
              */
-
-            Console.WriteLine("Starting Your Adventure");
-            
-
-
+            Console.ForegroundColor = ConsoleColor.DarkMagenta;
+            Console.BackgroundColor = ConsoleColor.White;
+            Console.WriteLine("********************************Starting Your Adventure********************************");
+            Console.ResetColor();
             Console.WriteLine();
             int random = 0;
             Random randomRoom = new Random();
@@ -327,19 +318,24 @@ namespace Dungeon
             switch (random)
             {
                 case 1:
+                    Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("\nThe moldy air fills the room, You feel the stagnant water seep through your shoes.\nYou carefully step around what seems to be jagged " +
                         "rocks and cave slime \n");
                     break;
                 case 2:
+                    Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("\nThe scorching sun is burning your skin as you fight your way through miles of sand and ancient ruins.\nNot a drop of water in sight.\n");
                     break;
                 case 3:
+                    Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("\nHeavy vegetation covers the forest, long tree vines block most of the pathways around the area.  \nYou hear wild animals faintly in the distance \n");
                     break;
                 case 4:
+                    Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("\nThe floor feels hot to the step. The smell of sulfur and coal are almost overwhelming. \nSeems like a bad place to light a match. \n");
                     break;
                 case 5:
+                    Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("\nThe air is calm, gravestones as far as you can see. \nNot the place you want to be at night. \n");
                     break;
             }

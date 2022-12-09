@@ -29,8 +29,9 @@ namespace DungeonLibrary
         }
         public override string ToString()
         {
-            return base.ToString() + (IsDiseased ? "He looks sick , better not let him bite me"
-                : "Just a normal mean rat");
+            Console.ForegroundColor = ConsoleColor.Red;
+            return base.ToString() + (IsDiseased ? "\nHe looks sick , better not let him bite me"
+                : "\nJust a normal mean rat");
 
         }
 
