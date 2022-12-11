@@ -39,12 +39,19 @@ namespace DungeonLibrary
                 case PlayerRace.Human:
                     raceDescription = "Just an average everyday normal guy";
                     break;
-                case PlayerRace.Alien:
-                    raceDescription = "Slimey Nasty Ol' Thing";
+                case PlayerRace.Barbarian:
+                    raceDescription = "Rugged, war ready specimen";
                     break;
-                case PlayerRace.Donkey:
-                    raceDescription = "A Valiant Steed!";
+                case PlayerRace.Wizard:
+                    raceDescription = "A 1000 year old Master of the Magic";
                     break;
+                case PlayerRace.Elf:
+                    raceDescription = "A highly intelligent race with magical powers and super speed";
+                    break;
+                case PlayerRace.Dwarf:
+                    raceDescription = "A Small warrior with a big heart";
+                    break;
+
             }
 
             return base.ToString() + "\nDescription : " + raceDescription + "\nWeapon : " + EquippedWeapon;

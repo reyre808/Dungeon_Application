@@ -28,8 +28,8 @@ namespace Dungeon
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("Please Enter Your Name and Hit Enter. ");
             Console.ResetColor();
-            Console.ForegroundColor= ConsoleColor.White;
-            
+            Console.ForegroundColor = ConsoleColor.White;
+
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("Hello " + Console.ReadLine() + " Are You Ready?");
             Console.ResetColor();
@@ -74,7 +74,7 @@ namespace Dungeon
                 Console.WriteLine("\nChoose your weapon:\n");
                 Console.ResetColor();
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("(L) Long Sword - Long damascus blade worthy of a KING\n" + 
+                Console.WriteLine("(L) Long Sword - Long damascus blade worthy of a KING\n" +
                     "(S) Sword - A short blade used for close and fast combat\n" +
                     "(B) Battle Axe - A weapon used by vikings and true warriors\n");
 
@@ -114,8 +114,10 @@ namespace Dungeon
                 Console.ResetColor();
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("\n(H) Human" +
-                    "\n(D) Donkey" +
-                    "\n(A) Alien");
+                    "\n(B) Barbarian" +
+                    "\n(W) Wizard" +
+                    "\n(E) Elf" +
+                    "\n(D) Dwarf");
 
                 ConsoleKey raceChoice = Console.ReadKey().Key;
 
@@ -125,15 +127,26 @@ namespace Dungeon
                         player.Race = PlayerRace.Human;
                         playerIsChoosingRace = false;
                         break;
-                    case ConsoleKey.D:
-                        player.Race = PlayerRace.Donkey;
+                    case ConsoleKey.B:
+                        player.Race = PlayerRace.Barbarian;
                         playerIsChoosingRace = false;
                         break;
-                    case ConsoleKey.A:
-                        player.Race = PlayerRace.Alien;
+                    case ConsoleKey.W:
+                        player.Race = PlayerRace.Wizard;
+                        playerIsChoosingRace = false;
+                        break;
+                    case ConsoleKey.E:
+                        player.Race = 
+              PlayerRace.Elf;
+                        playerIsChoosingRace = false;
+                        break;
+                    case ConsoleKey.D:
+                        player.Race =
+              PlayerRace.Dwarf;
                         playerIsChoosingRace = false;
                         break;
                     default:
+
                         Console.WriteLine("Invalid input, Please Press (H) , (D) , or (A).");
                         break;
                 }
@@ -281,7 +294,7 @@ namespace Dungeon
 
                         case "E":
                         case "EXIT":
-                            Console.ForegroundColor= ConsoleColor.DarkGreen;
+                            Console.ForegroundColor = ConsoleColor.DarkGreen;
                             Console.WriteLine("You Have Exited The Game, Thanks For Playing\n\n" + "Final Score : " + score);
                             playerIsFighting = false;
                             playerIsAlive = false;
@@ -324,7 +337,7 @@ namespace Dungeon
                                           @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
                                           @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
                         Console.WriteLine("FINAL SCORE : " + score);
-                                                playerIsFighting = false;
+                        playerIsFighting = false;
                         playerIsAlive = false;
                     }
                 } while (playerIsFighting);
