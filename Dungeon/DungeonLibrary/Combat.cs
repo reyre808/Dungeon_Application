@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading;//ADDED for easier access to Thread.Sleep(). line 29
-using System.Threading.Tasks;
-
-namespace DungeonLibrary
+﻿namespace DungeonLibrary
 {
     public class Combat
     {
@@ -13,7 +6,7 @@ namespace DungeonLibrary
         //fields, properties, or constructors. It will simply server
         //as a 'warehouse' of methods related to combat.
 
-        public static void DoAttack(Character attacker, Character defender) 
+        public static void DoAttack(Character attacker, Character defender)
         {
             //Get a random number from 1-100
             Random rand = new Random();
@@ -29,7 +22,7 @@ namespace DungeonLibrary
             Thread.Sleep(2000);
 
             //If the attacker "hits"
-            if(roll <= (attacker.CalcHitChance() - defender.CalcBlock()))
+            if (roll <= (attacker.CalcHitChance() - defender.CalcBlock()))
             {
                 //Calculate the damage
                 int damageDealt = attacker.CalcDamage();
@@ -58,7 +51,7 @@ namespace DungeonLibrary
 
             //If the monster survives the player's attack,
             //They attack the player.
-            if(monster.Life > 0)
+            if (monster.Life > 0)
             {
                 DoAttack(monster, player);
             }

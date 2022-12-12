@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace DungeonLibrary
+﻿namespace DungeonLibrary
 {
     public class SpinedRat : Monster
     {
@@ -18,7 +12,7 @@ namespace DungeonLibrary
 
         public SpinedRat()
         {
-            Name = "Pinky";
+            Name = "Spined Rat";
             MaxLife = 45;
             Life = 35;
             HitChance = 50;

@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace DungeonLibrary
+﻿namespace DungeonLibrary
 {
     public class Werewolf : Monster
     {
@@ -18,7 +12,7 @@ namespace DungeonLibrary
 
         public Werewolf()
         {
-            Name = "Romeo";
+            Name = "Werewolf";
             MaxLife = 95;
             Life = 85;
             HitChance = 65;

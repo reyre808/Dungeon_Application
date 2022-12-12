@@ -1,19 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DungeonLibrary;
-
-namespace DungeonLibrary
+﻿namespace DungeonLibrary
 {
     public class Weapons
     {
         public int MinDamage { get; set; }
-        
 
 
-        
+
+
         public int MaxDamage { get; set; }
         public string Name { get; set; }
         public int BonusHitChance { get; set; }

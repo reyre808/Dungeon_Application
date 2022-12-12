@@ -1,21 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace DungeonLibrary
+﻿namespace DungeonLibrary
 {
     public class Monster : Character
     {
         //FIELDS
         private int _minDamage;
-        
+
         //PROPS
 
-        public int MinDamage {
+        public int MinDamage
+        {
             get { return _minDamage; }
-            set { 
+            set
+            {
                 if (value <= MaxDamage)
                 {
                     _minDamage = value;
@@ -37,7 +33,7 @@ namespace DungeonLibrary
         }
 
         public Monster(string name, int hitChance, int block, int life, int maxLife, int maxDamage, int minDamage)
-            : base (name,hitChance, block, life, maxLife)
+            : base(name, hitChance, block, life, maxLife)
         {
             Name = name;
             MaxDamage = maxDamage;
@@ -60,7 +56,7 @@ namespace DungeonLibrary
 
             return damage;
         }
-         
+
 
 
 

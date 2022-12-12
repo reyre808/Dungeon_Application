@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DungeonLibrary;
-
-namespace DungeonLibrary
+﻿namespace DungeonLibrary
 {
     public class Player : Character//Inheritance syntax: Child Class : Parent Class
     {
@@ -21,7 +14,7 @@ namespace DungeonLibrary
         //CONSTRUCTOR
         //We need to take in all the properties as parameters,
         //EVEN the ones that were inherited from Character.
-        public Player(string name, int hitChance, int block, int life, int maxLife, PlayerRace race, Weapons equippedWeapon) : base (name, hitChance, block, life, maxLife)
+        public Player(string name, int hitChance, int block, int life, int maxLife, PlayerRace race, Weapons equippedWeapon) : base(name, hitChance, block, life, maxLife)
         {
             Race = race;
             EquippedWeapon = equippedWeapon;
@@ -63,7 +56,7 @@ namespace DungeonLibrary
 
             int damage = rand.Next(
                 EquippedWeapon.MinDamage,
-                EquippedWeapon.MaxDamage +1
+                EquippedWeapon.MaxDamage + 1
                 );
 
             return damage;
@@ -71,7 +64,7 @@ namespace DungeonLibrary
 
         public override int CalcHitChance()
         {
-        return base.CalcHitChance() + EquippedWeapon.BonusHitChance;
+            return base.CalcHitChance() + EquippedWeapon.BonusHitChance;
         }
     }
 }

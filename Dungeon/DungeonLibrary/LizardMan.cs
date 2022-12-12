@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace DungeonLibrary
+﻿namespace DungeonLibrary
 {
     public class LizardMan : Monster
     {
@@ -18,7 +12,7 @@ namespace DungeonLibrary
 
         public LizardMan()
         {
-            Name = "Chomp Chomp";
+            Name = "Lizard Man";
             MaxLife = 90;
             Life = 80;
             HitChance = 60;
